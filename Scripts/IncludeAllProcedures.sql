@@ -11,4 +11,5 @@
 @include .\storeProcedures\RecuperaScaffaleNew.SQL
 @include .\storeProcedures\GetAllMissions.SQL
 @include .\storeProcedures\RecuperaScaffaleWithError.SQL
-@include .\storeProcedures\RecuperaRepoAssociato.SQL
+@include .\storeProcedures\RecuperaRepoAssociato.sql
+@include .\storeProcedures\getStorageState.sql
