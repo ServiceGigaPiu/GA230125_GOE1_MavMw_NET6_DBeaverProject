@@ -277,8 +277,8 @@ COMMENT="the fleet provides unique tags relative to its runtime. A tag is remove
 -- COMMENT="fleet-provided tags related to archived activities. A tag is persisted here after activity has been completed, therefore it may be not unique";
 -- 
 
-@include IncludeAllProcedures.sql
-
 @include StaticInitialData.SQL
 
-@include .\Views\Views.sql
+@include .\Views\Views.SQL
+
+@include IncludeAllProcedures.sql

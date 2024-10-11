@@ -152,6 +152,9 @@ SELECT
 	act_udc.tag AS udc_tag,
 	run_state_enum.name AS run_state,
 	IF(activity.error_code = 0, "ok", "fail") AS ok,
+	activity_uses_fleettag.fleettag AS fleettag,
+	activity_hasunique_fleettag.fleettag AS fleettag_uq,
+	activity_hasunique_clienttag.clienttag AS clienttag_uq,
 	activity.*
 FROM activity
 LEFT JOIN (
@@ -164,6 +167,9 @@ LEFT JOIN (
 	LEFT JOIN udc ON activity_uses_udc.udc_id = udc.id
 ) AS act_udc ON activity.id = act_udc.activity_id
 LEFT JOIN run_state_enum ON activity.run_state_enum = run_state_enum.value
+LEFT JOIN activity_uses_fleettag ON activity.id = activity_uses_fleettag.activity_id
+LEFT JOIN activity_hasunique_fleettag ON activity.id = activity_hasunique_fleettag.activity_id
+LEFT JOIN activity_hasunique_clienttag ON activity.id = activity_hasunique_clienttag.activity_id
 ORDER BY activity.id;
 
 
