@@ -1,6 +1,12 @@
 {
 	"folders": {
-		"GOE1-MAV-MW-SERVER": {}
+		"GOE1-MAV-MW-SERVER": {},
+		"PROD": {
+			"parent": "GOE1-MAV-MW-SERVER"
+		},
+		"REMOTE": {
+			"parent": "GOE1-MAV-MW-SERVER"
+		}
 	},
 	"connections": {
 		"mysql5-18da1f8b7f4-5834cae03e5e5192": {
@@ -8,7 +14,7 @@
 			"driver": "mysql5",
 			"name": "@readonly",
 			"save-password": true,
-			"folder": "GOE1-MAV-MW-SERVER",
+			"folder": "GOE1-MAV-MW-SERVER/REMOTE",
 			"configuration": {
 				"host": "192.168.62.230",
 				"port": "3306",
@@ -25,7 +31,7 @@
 			"driver": "mysql5",
 			"name": "@dev",
 			"save-password": true,
-			"folder": "GOE1-MAV-MW-SERVER",
+			"folder": "GOE1-MAV-MW-SERVER/REMOTE",
 			"configuration": {
 				"host": "192.168.62.230",
 				"port": "3306",
@@ -43,7 +49,7 @@
 			"driver": "mysql5",
 			"name": "remote@dev",
 			"save-password": true,
-			"folder": "GOE1-MAV-MW-SERVER",
+			"folder": "GOE1-MAV-MW-SERVER/REMOTE",
 			"configuration": {
 				"host": "7.168.119.190",
 				"port": "3306",
@@ -58,9 +64,9 @@
 		"mysql5-1917a9f0df8-330e674b762c9076": {
 			"provider": "mysql",
 			"driver": "mysql5",
-			"name": "remote@dev 1",
+			"name": "remote@dev sub19",
 			"save-password": true,
-			"folder": "GOE1-MAV-MW-SERVER",
+			"folder": "GOE1-MAV-MW-SERVER/REMOTE",
 			"configuration": {
 				"host": "192.168.19.104",
 				"port": "3306",
@@ -74,8 +80,24 @@
 					"rewriteBatchedStatements": "true",
 					"enabledTLSProtocols": "TLSv1,TLSv1.1,TLSv1.2,TLSv1.3"
 				},
-				"auth-model": "native",
-				"handlers": {}
+				"auth-model": "native"
+			}
+		},
+		"mysql5-1920f8ebee1-e7f74d184f6b73b": {
+			"provider": "mysql",
+			"driver": "mysql5",
+			"name": "@readonly ",
+			"save-password": true,
+			"folder": "GOE1-MAV-MW-SERVER/PROD",
+			"configuration": {
+				"host": "localhost",
+				"port": "3306",
+				"url": "jdbc:mysql://localhost:3306/",
+				"configurationType": "MANUAL",
+				"home": "mysql_client",
+				"type": "dev",
+				"closeIdleConnection": false,
+				"auth-model": "native"
 			}
 		}
 	},
